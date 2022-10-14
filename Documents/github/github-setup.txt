@@ -15,4 +15,15 @@ Step-1: Git Client setup
 	$cd ~/.ssh/config
 
 	copy the .pub file content and paste in your github account settings
+3. Setup your user name
+
+$ git config --global user.name "Kalyan Battiprolu"
+
+4. Confirm whther the username has been configured correctly
+
+$ git config user.name
+
+5. Configure your commit email address
+
+$ git config --global user.email "email@example.com"
 
