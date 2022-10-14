@@ -27,6 +27,6 @@ $ git config user.name
 
 $ git config --global user.email "email@example.com"
 
-==User configuration in client machine===
+
 
 
