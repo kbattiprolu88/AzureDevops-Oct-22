@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Creatig Azure Storage Account and App Service'
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Azure subscription 1'
+    subscriptionId: 'b672029e02b6'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'NetworkWatcherRG'
+    location: 'South India'
+    csmFile: 'CreateWebApp/linkedStorageAccount.json'
+    csmParametersFile: 'azuredeploy.parameters.json'
+    deploymentMode: 'Incremental'
